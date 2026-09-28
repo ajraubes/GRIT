@@ -69,182 +69,6 @@
         "padding-block-end": 72
       }
     },
-    "section_QW4Kxh": {
-      "type": "section",
-      "blocks": {
-        "video_ga34AB": {
-          "type": "video",
-          "name": "t:names.video",
-          "settings": {
-            "source": "uploaded",
-            "video": "shopify://files/videos/GRIT STRIP clip 2.mp4",
-            "video_url": "",
-            "video_autoplay": true,
-            "video_loop": true,
-            "alt": "",
-            "custom_width": 50,
-            "custom_width_mobile": 100,
-            "aspect_ratio": "auto",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_color": "",
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "video_FXmmwQ": {
-          "type": "video",
-          "name": "t:names.video",
-          "settings": {
-            "source": "uploaded",
-            "video": "shopify://files/videos/GRIT STRIP clip 4.mp4",
-            "video_url": "",
-            "video_autoplay": true,
-            "video_loop": true,
-            "alt": "",
-            "custom_width": 50,
-            "custom_width_mobile": 100,
-            "aspect_ratio": "auto",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_color": "",
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "video_ga34AB",
-        "video_FXmmwQ"
-      ],
-      "name": "t:names.custom_section",
-      "settings": {
-        "content_direction": "row",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "center",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 0,
-        "section_width": "full-width",
-        "section_height": "",
-        "section_height_custom": 50,
-        "background_media": "none",
-        "background_color": "",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_color": "",
-        "border_radius": 0,
-        "padding-block-start": 0,
-        "padding-block-end": 0
-      }
-    },
-    "section_PJRNV6": {
-      "type": "section",
-      "blocks": {
-        "video_a9Twf9": {
-          "type": "video",
-          "name": "t:names.video",
-          "settings": {
-            "source": "uploaded",
-            "video": "shopify://files/videos/GRIT STRIP clip 1.mp4",
-            "video_url": "",
-            "video_autoplay": true,
-            "video_loop": true,
-            "alt": "",
-            "custom_width": 50,
-            "custom_width_mobile": 100,
-            "aspect_ratio": "auto",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_color": "",
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "video_wzFhzz": {
-          "type": "video",
-          "name": "t:names.video",
-          "settings": {
-            "source": "uploaded",
-            "video": "shopify://files/videos/GRIT STRIP clip 5.mp4",
-            "video_url": "",
-            "video_autoplay": true,
-            "video_loop": true,
-            "alt": "",
-            "custom_width": 50,
-            "custom_width_mobile": 100,
-            "aspect_ratio": "auto",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_color": "",
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "video_a9Twf9",
-        "video_wzFhzz"
-      ],
-      "name": "t:names.custom_section",
-      "settings": {
-        "content_direction": "row",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "center",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 0,
-        "section_width": "full-width",
-        "section_height": "",
-        "section_height_custom": 50,
-        "background_media": "none",
-        "background_color": "",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_color": "",
-        "border_radius": 0,
-        "padding-block-start": 0,
-        "padding-block-end": 0
-      }
-    },
     "featured_product_information_WqBBgK": {
       "type": "featured-product-information",
       "blocks": {
@@ -477,12 +301,422 @@
         "padding-block-start": 40,
         "padding-block-end": 40
       }
+    },
+    "featured_product_information_rNnxWy": {
+      "type": "featured-product-information",
+      "blocks": {
+        "media-gallery": {
+          "type": "_featured-product-information-carousel",
+          "static": true,
+          "settings": {
+            "aspect_ratio": "adapt",
+            "constrain_to_viewport": true,
+            "media_fit": "contain",
+            "media_radius": 0,
+            "extend_media": false,
+            "zoom": true,
+            "video_loop": false,
+            "hide_variants": true,
+            "icons_style": "arrow",
+            "slideshow_controls_style": "counter",
+            "slideshow_mobile_controls_style": "dots",
+            "thumbnail_position": "bottom",
+            "thumbnail_width": 44,
+            "thumbnail_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "product-details": {
+          "type": "_product-details",
+          "static": true,
+          "settings": {
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "details_position": "flex-start",
+            "gap": 28,
+            "sticky_details_desktop": true,
+            "background_media": "none",
+            "background_color": "",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "padding-block-start": 24,
+            "padding-block-end": 24,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "group_X7PN8G": {
+              "type": "group",
+              "name": "t:names.header",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "background_media": "none",
+                "background_color": "",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "product_title_UwA3tf": {
+                  "type": "product-title",
+                  "name": "t:names.title",
+                  "settings": {
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "h2",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "price_ztGfwL": {
+                  "type": "price",
+                  "name": "t:names.product_price",
+                  "settings": {
+                    "show_sale_price_first": true,
+                    "show_installments": true,
+                    "show_tax_info": true,
+                    "type_preset": "custom",
+                    "width": "100%",
+                    "alignment": "left",
+                    "font": "var(--font-subheading--family)",
+                    "font_size": "1.5rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "text_color": "",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "product_description_JVBNbQ": {
+                  "type": "product-description",
+                  "name": "t:names.product_description",
+                  "settings": {
+                    "text": "<p>{{ closest.product.description }}</p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "product_title_UwA3tf",
+                "price_ztGfwL",
+                "product_description_JVBNbQ"
+              ]
+            },
+            "review_33dH4m": {
+              "type": "review",
+              "name": "t:names.product_review_stars",
+              "settings": {
+                "stars_style": "shaded",
+                "show_number": true,
+                "text_color": "",
+                "type_preset": "paragraph",
+                "width": "100%",
+                "alignment": "left"
+              },
+              "blocks": {}
+            },
+            "variant_picker_yLYr4G": {
+              "type": "variant-picker",
+              "name": "t:names.product_variant_picker",
+              "settings": {
+                "variant_style": "buttons",
+                "show_swatches": true,
+                "option_label_text_color": "",
+                "variant_style_class": "default",
+                "custom_variant_background": "{{ settings.color_palette.background }}",
+                "custom_variant_text": "{{ settings.color_palette.foreground }}",
+                "custom_variant_border": "{{ settings.color_palette.foreground }}",
+                "selected_variant_style_class": "default",
+                "custom_selected_variant_background": "{{ settings.color_palette.foreground }}",
+                "custom_selected_variant_text": "{{ settings.color_palette.background }}",
+                "custom_selected_variant_border": "{{ settings.color_palette.foreground }}",
+                "alignment": "left",
+                "padding-block-start": 0,
+                "padding-block-end": 8,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "group_X7PN8G",
+            "review_33dH4m",
+            "variant_picker_yLYr4G"
+          ]
+        }
+      },
+      "name": "t:names.featured_product_information",
+      "settings": {
+        "product": "",
+        "content_width": "content-center-aligned",
+        "desktop_media_position": "right",
+        "equal_columns": true,
+        "limit_details_width": true,
+        "gap": 48,
+        "background_color": "",
+        "padding-block-start": 40,
+        "padding-block-end": 40
+      }
+    },
+    "section_QW4Kxh": {
+      "type": "section",
+      "blocks": {
+        "video_ga34AB": {
+          "type": "video",
+          "name": "t:names.video",
+          "settings": {
+            "source": "uploaded",
+            "video": "shopify://files/videos/GRIT STRIP clip 2.mp4",
+            "video_url": "",
+            "video_autoplay": true,
+            "video_loop": true,
+            "alt": "",
+            "custom_width": 50,
+            "custom_width_mobile": 100,
+            "aspect_ratio": "auto",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "video_FXmmwQ": {
+          "type": "video",
+          "name": "t:names.video",
+          "settings": {
+            "source": "uploaded",
+            "video": "shopify://files/videos/GRIT STRIP clip 4.mp4",
+            "video_url": "",
+            "video_autoplay": true,
+            "video_loop": true,
+            "alt": "",
+            "custom_width": 50,
+            "custom_width_mobile": 100,
+            "aspect_ratio": "auto",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "video_ga34AB",
+        "video_FXmmwQ"
+      ],
+      "name": "t:names.custom_section",
+      "settings": {
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "center",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 0,
+        "section_width": "full-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "background_media": "none",
+        "background_color": "",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_color": "",
+        "border_radius": 0,
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "section_PJRNV6": {
+      "type": "section",
+      "blocks": {
+        "video_a9Twf9": {
+          "type": "video",
+          "name": "t:names.video",
+          "settings": {
+            "source": "uploaded",
+            "video": "shopify://files/videos/GRIT STRIP clip 1.mp4",
+            "video_url": "",
+            "video_autoplay": true,
+            "video_loop": true,
+            "alt": "",
+            "custom_width": 50,
+            "custom_width_mobile": 100,
+            "aspect_ratio": "auto",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "video_wzFhzz": {
+          "type": "video",
+          "name": "t:names.video",
+          "settings": {
+            "source": "uploaded",
+            "video": "shopify://files/videos/GRIT STRIP clip 5.mp4",
+            "video_url": "",
+            "video_autoplay": true,
+            "video_loop": true,
+            "alt": "",
+            "custom_width": 50,
+            "custom_width_mobile": 100,
+            "aspect_ratio": "auto",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "video_a9Twf9",
+        "video_wzFhzz"
+      ],
+      "name": "t:names.custom_section",
+      "settings": {
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "center",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 0,
+        "section_width": "full-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "background_media": "none",
+        "background_color": "",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_color": "",
+        "border_radius": 0,
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
     }
   },
   "order": [
     "hero_jVaWmY",
+    "featured_product_information_WqBBgK",
+    "featured_product_information_rNnxWy",
     "section_QW4Kxh",
-    "section_PJRNV6",
-    "featured_product_information_WqBBgK"
+    "section_PJRNV6"
   ]
 }

@@ -17,7 +17,7 @@
           "name": "t:names.button",
           "settings": {
             "label": "SIGN UP",
-            "link": "shopify://collections/all",
+            "link": "shopify://pages/athlete-application",
             "open_in_new_tab": false,
             "style_class": "button",
             "custom_button_background": "rgba(0,0,0,0)",

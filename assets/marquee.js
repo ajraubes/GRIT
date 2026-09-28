@@ -32,15 +32,20 @@ class MarqueeComponent extends Component {
     this.#duplicateContent();
 
     this.#setSpeed(speed);
+    this.#restartAnimation();
 
-    window.addEventListener('resize', this.#handleResize);
-    this.addEventListener('pointerenter', this.#slowDown);
-    this.addEventListener('pointerleave', this.#speedUp);
+    this.#resizeObserver = new ResizeObserver(this.#handleResize);
+    this.#resizeObserver.observe(this);
+
+    if (this.#canHover.matches) {
+      this.addEventListener('pointerenter', this.#slowDown);
+      this.addEventListener('pointerleave', this.#speedUp);
+    }
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    window.removeEventListener('resize', this.#handleResize);
+    this.#resizeObserver?.disconnect();
     this.removeEventListener('pointerenter', this.#slowDown);
     this.removeEventListener('pointerleave', this.#speedUp);
   }
@@ -55,7 +60,15 @@ class MarqueeComponent extends Component {
    */
   #marqueeWidth = null;
 
+  /**
+   * @type {ResizeObserver | null}
+   */
+  #resizeObserver = null;
+
+  #canHover = window.matchMedia('(hover: hover) and (pointer: fine)');
+
   #slowDown = debounce(() => {
+    if (!this.#canHover.matches) return;
     if (this.#animation) return;
 
     const animation = this.refs.wrapper.getAnimations()[0];
@@ -105,67 +118,56 @@ class MarqueeComponent extends Component {
    * @param {number} value
    */
   #setSpeed(value) {
-    this.style.setProperty('--marquee-speed', `${value}s`);
+    const speedFactor = Number(this.getAttribute('data-speed-factor')) || 25;
+    const speed = Number.isFinite(value) && value > 0 ? value : speedFactor;
+    this.style.setProperty('--marquee-speed', `${speed}s`);
   }
 
   async #queryNumberOfCopies() {
     const { marqueeItems } = this.refs;
+    const item = marqueeItems[0];
 
-    return new Promise((resolve) => {
-      if (!marqueeItems[0]) {
-        // Wrapping the resolve in a setTimeout here and below splits each marquee reflow into a separate task.
-        return setTimeout(() => resolve({ numberOfCopies: 1, isHorizontalResize: true }), 0);
-      }
+    if (!item) {
+      return { numberOfCopies: 1, isHorizontalResize: true };
+    }
 
-      const intersectionObserver = new IntersectionObserver(
-        (entries) => {
-          const firstEntry = entries[0];
-          if (!firstEntry) return;
-          intersectionObserver.disconnect();
+    await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
 
-          const { width: marqueeWidth } = firstEntry.rootBounds ?? { width: 0 };
-          const { width: marqueeItemsWidth } = firstEntry.boundingClientRect;
+    const width = this.clientWidth || this.getBoundingClientRect().width;
+    const itemsWidth = item.scrollWidth || item.getBoundingClientRect().width;
+    const isHorizontalResize = this.#marqueeWidth !== width;
+    this.#marqueeWidth = width;
 
-          const isHorizontalResize = this.#marqueeWidth !== marqueeWidth;
-          this.#marqueeWidth = marqueeWidth;
-
-          setTimeout(() => {
-            resolve({
-              numberOfCopies: marqueeItemsWidth === 0 ? 1 : Math.ceil(marqueeWidth / marqueeItemsWidth),
-              isHorizontalResize,
-            });
-          }, 0);
-        },
-        { root: this }
-      );
-      intersectionObserver.observe(marqueeItems[0]);
-    });
+    return {
+      numberOfCopies: !width || !itemsWidth ? 1 : Math.max(1, Math.ceil(width / itemsWidth)),
+      isHorizontalResize,
+    };
   }
 
   /**
    * @param {number} numberOfCopies
    */
   #calculateSpeed(numberOfCopies) {
-    const speedFactor = Number(this.getAttribute('data-speed-factor'));
-    const speed = Math.sqrt(numberOfCopies) * speedFactor;
+    const speedFactor = Number(this.getAttribute('data-speed-factor')) || 25;
+    const copies = Number.isFinite(numberOfCopies) && numberOfCopies > 0 ? numberOfCopies : 1;
 
-    return speed;
+    return Math.sqrt(copies) * speedFactor;
   }
 
   #handleResize = debounce(async () => {
     const { marqueeItems } = this.refs;
-    const { newNumberOfCopies, isHorizontalResize } = await this.#queryNumberOfCopies();
+    const { numberOfCopies, isHorizontalResize } = await this.#queryNumberOfCopies();
 
     // opt out of marquee manipulation on vertical resizes
     if (!isHorizontalResize) return;
 
     const currentNumberOfCopies = marqueeItems.length;
-    const speed = this.#calculateSpeed(newNumberOfCopies);
+    const speed = this.#calculateSpeed(numberOfCopies);
 
-    if (newNumberOfCopies > currentNumberOfCopies) {
-      this.#addRepeatedItems(newNumberOfCopies - currentNumberOfCopies);
-    } else if (newNumberOfCopies < currentNumberOfCopies) {
-      this.#removeRepeatedItems(currentNumberOfCopies - newNumberOfCopies);
+    if (numberOfCopies > currentNumberOfCopies) {
+      this.#addRepeatedItems(numberOfCopies - currentNumberOfCopies);
+    } else if (numberOfCopies < currentNumberOfCopies) {
+      this.#removeRepeatedItems(currentNumberOfCopies - numberOfCopies);
     }
 
     this.#duplicateContent();
@@ -174,13 +176,12 @@ class MarqueeComponent extends Component {
   }, 250);
 
   #restartAnimation() {
-    const animations = this.refs.wrapper.getAnimations();
+    const { wrapper } = this.refs;
+    if (!wrapper) return;
 
-    requestAnimationFrame(() => {
-      for (const animation of animations) {
-        animation.currentTime = 0;
-      }
-    });
+    wrapper.style.animation = 'none';
+    void wrapper.offsetWidth;
+    wrapper.style.removeProperty('animation');
   }
 
   #duplicateContent() {

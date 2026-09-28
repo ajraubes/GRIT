@@ -21,6 +21,7 @@
   style="
     {%- render 'spacing-style', settings: section.settings %};
     {% render 'gap-style', value: gap_between_elements, name: 'marquee-gap' %}
+    --marquee-speed: 25s;
     --marquee-direction: {{ section.settings.movement_direction }};
   "
   data-speed-factor="25"
@@ -53,14 +54,17 @@
 
   .marquee__wrapper {
     display: flex;
+    flex-wrap: nowrap;
     gap: var(--marquee-gap);
-    width: fit-content;
+    width: max-content;
     white-space: nowrap;
+    backface-visibility: hidden;
   }
 
   .marquee__content {
     min-width: max-content;
     display: flex;
+    flex-wrap: nowrap;
     gap: var(--marquee-gap);
   }
 
@@ -70,11 +74,13 @@
 
   .marquee__content .marquee__repeated-items * {
     max-width: none;
+    text-wrap: nowrap;
   }
 
   .marquee__repeated-items {
     min-width: max-content;
     display: flex;
+    flex-wrap: nowrap;
     gap: var(--marquee-gap);
     align-items: center;
     justify-content: center;
@@ -82,11 +88,12 @@
 
   .marquee__repeated-items > * {
     align-content: center;
+    flex-shrink: 0;
   }
 
   @media (prefers-reduced-motion: no-preference) {
     marquee-component:not([data-disabled]) .marquee__wrapper {
-      animation: marquee-motion var(--marquee-speed) linear infinite var(--marquee-direction);
+      animation: marquee-motion var(--marquee-speed, 25s) linear infinite var(--marquee-direction, normal);
     }
   }
 

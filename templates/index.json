@@ -353,7 +353,7 @@
       },
       "name": "t:names.featured_product_information",
       "settings": {
-        "product": "",
+        "product": "grit-adult-athletic-nasal-strips-30-count",
         "content_width": "content-center-aligned",
         "desktop_media_position": "left",
         "equal_columns": true,
@@ -586,7 +586,7 @@
       },
       "name": "t:names.featured_product_information",
       "settings": {
-        "product": "",
+        "product": "grit-youth-athletic-nasal-strips-30-count",
         "content_width": "content-center-aligned",
         "desktop_media_position": "right",
         "equal_columns": true,

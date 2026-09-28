@@ -25,9 +25,9 @@
             "custom_button_border": "{{ settings.color_palette.color1 }}",
             "link_text_color": "",
             "width": "fit-content",
-            "custom_width": 100,
+            "custom_width": 25,
             "width_mobile": "fit-content",
-            "custom_width_mobile": 100
+            "custom_width_mobile": 50
           },
           "blocks": {}
         }
@@ -233,7 +233,7 @@
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
-                    "type_preset": "h2",
+                    "type_preset": "h3",
                     "font": "var(--font-body--family)",
                     "font_size": "1rem",
                     "line_height": "normal",
@@ -466,7 +466,7 @@
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
-                    "type_preset": "h2",
+                    "type_preset": "h3",
                     "font": "var(--font-body--family)",
                     "font_size": "1rem",
                     "line_height": "normal",

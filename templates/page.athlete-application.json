@@ -44,11 +44,18 @@
             "text_color": ""
           },
           "blocks": {}
+        },
+        "powerful_form_builder_app_block_wrimxW": {
+          "type": "shopify://apps/powerful-form-builder/blocks/app-block/e4bcb1eb-35b2-42e6-bc37-bfe0e1542c9d",
+          "settings": {
+            "shortcode": "<div class=\"globo-formbuilder\" data-id=\"MTY2MTIz\"></div>"
+          }
         }
       },
       "block_order": [
         "heading",
-        "page-content"
+        "page-content",
+        "powerful_form_builder_app_block_wrimxW"
       ],
       "settings": {
         "content_direction": "column",
@@ -57,52 +64,9 @@
         "padding-block-start": 40,
         "padding-block-end": 80
       }
-    },
-    "179059562806fd2bc2": {
-      "type": "_blocks",
-      "blocks": {
-        "powerful_form_builder_app_block_7dkzgB": {
-          "type": "shopify://apps/powerful-form-builder/blocks/app-block/e4bcb1eb-35b2-42e6-bc37-bfe0e1542c9d",
-          "settings": {
-            "shortcode": "<div class=\"globo-formbuilder\" data-id=\"MTY2MTIz\"></div>"
-          }
-        }
-      },
-      "block_order": [
-        "powerful_form_builder_app_block_7dkzgB"
-      ],
-      "settings": {
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "flex-start",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 12,
-        "section_width": "page-width",
-        "section_height": "",
-        "section_height_custom": 50,
-        "background_media": "none",
-        "background_color": "",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_color": "",
-        "border_radius": 0,
-        "padding-block-start": 0,
-        "padding-block-end": 0
-      }
     }
   },
   "order": [
-    "main",
-    "179059562806fd2bc2"
+    "main"
   ]
 }

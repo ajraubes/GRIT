@@ -12,11 +12,13 @@
   {% render 'header-actions', section: section %}
 {% enddoc %}
 
-<script
-  type="module"
-  src="{{ 'cart-icon.js' | asset_url }}"
-  fetchpriority="low"
-></script>
+{% unless section.settings.show_cart == false %}
+  <script
+    type="module"
+    src="{{ 'cart-icon.js' | asset_url }}"
+    fetchpriority="low"
+  ></script>
+{% endunless %}
 
 {% capture cart_icon %}
   <cart-icon
@@ -63,7 +65,8 @@
   {% endif %}
   {{- block.shopify_attributes -}}
 >
-  {% if shop.customer_accounts_enabled %}
+  {% unless section.settings.show_account == false %}
+    {% if shop.customer_accounts_enabled %}
     {% liquid
       assign account_actions_style = ''
       if display_style == 'text' and section
@@ -111,31 +114,34 @@
         {% endif %}
       </shopify-account>
     </div>
-  {% endif %}
+    {% endif %}
+  {% endunless %}
 
-  {% if settings.cart_type == 'drawer' and template.name != 'cart' %}
-    <button
-      class="header-actions__action button-unstyled{% if display_style == 'text' %} header-actions__text-style{% endif %}"
-      on:click="#cart-drawer/toggle"
-      aria-haspopup="dialog"
-      aria-expanded="false"
-      aria-controls="cart-drawer"
-      aria-label="{{ 'accessibility.cart' | t }}"
-      aria-describedby="cart-bubble-text"
-      data-testid="cart-drawer-trigger"
-    >
-      {{ cart_icon }}
-    </button>
-  {% else %}
-    <a
-      href="{{ routes.cart_url }}"
-      class="header-actions__action action__cart{% if display_style == 'text' %} header-actions__text-style{% endif %}"
-      aria-label="{{ 'accessibility.cart' | t }}"
-      aria-describedby="cart-bubble-text"
-    >
-      {{ cart_icon }}
-    </a>
-  {% endif %}
+  {% unless section.settings.show_cart == false %}
+    {% if settings.cart_type == 'drawer' and template.name != 'cart' %}
+      <button
+        class="header-actions__action button-unstyled{% if display_style == 'text' %} header-actions__text-style{% endif %}"
+        on:click="#cart-drawer/toggle"
+        aria-haspopup="dialog"
+        aria-expanded="false"
+        aria-controls="cart-drawer"
+        aria-label="{{ 'accessibility.cart' | t }}"
+        aria-describedby="cart-bubble-text"
+        data-testid="cart-drawer-trigger"
+      >
+        {{ cart_icon }}
+      </button>
+    {% else %}
+      <a
+        href="{{ routes.cart_url }}"
+        class="header-actions__action action__cart{% if display_style == 'text' %} header-actions__text-style{% endif %}"
+        aria-label="{{ 'accessibility.cart' | t }}"
+        aria-describedby="cart-bubble-text"
+      >
+        {{ cart_icon }}
+      </a>
+    {% endif %}
+  {% endunless %}
 
   <span
     ref="liveRegion"

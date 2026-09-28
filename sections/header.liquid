@@ -1,9 +1,18 @@
 
 
 {% liquid
+  assign show_account = false
+  if shop.customer_accounts_enabled and section.settings.show_account != false
+    assign show_account = true
+  endif
+  assign show_cart = true
+  if section.settings.show_cart == false
+    assign show_cart = false
+  endif
+
   assign order = 'logo,menu,localization,search,drawer_search,actions'
 
-  if shop.customer_accounts_enabled
+  if show_account
     assign order = 'drawer_search,logo,menu,localization,search,actions'
   endif
 
@@ -102,23 +111,25 @@
   endif
 
   capture actions
-    render 'header-actions', customer_account_menu: section.settings.customer_account_menu, display_style: section.settings.actions_display_style, section: section
+    if show_account or show_cart
+      render 'header-actions', customer_account_menu: section.settings.customer_account_menu, display_style: section.settings.actions_display_style, section: section
+    endif
   endcapture
 
-  if shop.customer_accounts_enabled
+  if show_account
     assign search_class = 'search-action--hidden-on-drawer'
   endif
 
   # Handle localization positioning
   if section.settings.localization_position == 'left'
     if section.settings.search_position == 'left'
-      if shop.customer_accounts_enabled
+      if show_account
         assign order = 'drawer_search,logo,search,localization,menu,actions'
       else
         assign order = 'logo,search,localization,menu,drawer_search,actions'
       endif
     else
-      if shop.customer_accounts_enabled
+      if show_account
         assign order = 'drawer_search,logo,localization,menu,search,actions'
       else
         assign order = 'logo,localization,menu,search,drawer_search,actions'
@@ -126,7 +137,7 @@
     endif
   else
     if section.settings.search_position == 'left'
-      if shop.customer_accounts_enabled
+      if show_account
         assign order = 'drawer_search,logo,search,menu,localization,actions'
       else
         assign order = 'logo,search,menu,localization,drawer_search,actions'
@@ -139,9 +150,9 @@
 
   # Skip drawer search under specific conditions:
   # Always render if search_row is bottom
-  # Don't render when shop.customer_accounts_enabled is false and search_position is left and search_style is not none
+  # Don't render when account is hidden and search_position is left and search_style is not none
   assign skip_drawer_search = false
-  if shop.customer_accounts_enabled == false and section.settings.search_position == 'left' and search_style != 'none'
+  if show_account == false and section.settings.search_position == 'left' and search_style != 'none'
     assign skip_drawer_search = true
   endif
 
@@ -1318,14 +1329,34 @@
       "content": "t:content.customer_account"
     },
     {
+      "type": "checkbox",
+      "id": "show_account",
+      "label": "t:settings.account_icon",
+      "info": "t:info.header_actions_all_screens",
+      "default": true
+    },
+    {
       "type": "paragraph",
-      "content": "t:content.manage_customer_accounts"
+      "content": "t:content.manage_customer_accounts",
+      "visible_if": "{{ section.settings.show_account }}"
     },
     {
       "type": "link_list",
       "id": "customer_account_menu",
       "label": "t:settings.menu",
-      "default": "customer-account-main-menu"
+      "default": "customer-account-main-menu",
+      "visible_if": "{{ section.settings.show_account }}"
+    },
+    {
+      "type": "header",
+      "content": "t:names.cart"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cart",
+      "label": "t:settings.cart_icon",
+      "info": "t:info.header_actions_all_screens",
+      "default": true
     },
     {
       "type": "header",
@@ -1709,12 +1740,14 @@
     },
     {
       "type": "header",
-      "content": "t:content.cart_bubble"
+      "content": "t:content.cart_bubble",
+      "visible_if": "{{ section.settings.show_cart }}"
     },
     {
       "type": "select",
       "id": "bubble_style",
       "label": "t:settings.bubble_style",
+      "visible_if": "{{ section.settings.show_cart }}",
       "options": [
         {
           "value": "default",
@@ -1732,14 +1765,14 @@
       "id": "bubble_background_color",
       "label": "t:settings.background",
       "placeholder": "t:settings.default",
-      "visible_if": "{{ section.settings.bubble_style == 'custom' }}"
+      "visible_if": "{{ section.settings.show_cart and section.settings.bubble_style == 'custom' }}"
     },
     {
       "type": "color",
       "id": "bubble_text_color",
       "label": "t:settings.text",
       "placeholder": "t:settings.default",
-      "visible_if": "{{ section.settings.bubble_style == 'custom' }}"
+      "visible_if": "{{ section.settings.show_cart and section.settings.bubble_style == 'custom' }}"
     },
     {
       "type": "header",

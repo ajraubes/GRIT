@@ -16,7 +16,7 @@
           "type": "button",
           "name": "t:names.button",
           "settings": {
-            "label": "SIGN UP",
+            "label": "Apply for Sponsorship",
             "link": "shopify://pages/athlete-application",
             "open_in_new_tab": false,
             "style_class": "button",

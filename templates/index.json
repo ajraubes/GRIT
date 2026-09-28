@@ -69,6 +69,68 @@
         "padding-block-end": 72
       }
     },
+    "section_qt7pGG": {
+      "type": "section",
+      "blocks": {
+        "text_RNUD9k": {
+          "type": "text",
+          "settings": {
+            "text": "<p>EXCLUSIVELY SOLD AT DIRTY 100 EVENTS</p>",
+            "width": "100%",
+            "max_width": "narrow",
+            "alignment": "center",
+            "type_preset": "h2",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "text_color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_RNUD9k"
+      ],
+      "name": "t:names.pull_quote",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 16,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "background_media": "none",
+        "background_color": "",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_color": "",
+        "border_radius": 0,
+        "padding-block-start": 25,
+        "padding-block-end": 15
+      }
+    },
     "featured_product_information_WqBBgK": {
       "type": "featured-product-information",
       "blocks": {
@@ -714,6 +776,7 @@
   },
   "order": [
     "hero_jVaWmY",
+    "section_qt7pGG",
     "featured_product_information_WqBBgK",
     "featured_product_information_rNnxWy",
     "section_QW4Kxh",

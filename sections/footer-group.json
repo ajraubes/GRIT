@@ -27,12 +27,12 @@
         "social_links_Ew63Kq": {
           "type": "social-links",
           "settings": {
-            "icon_color": "",
-            "facebook_url": "https://www.facebook.com/",
-            "instagram_url": "https://www.instagram.com/",
-            "youtube_url": "https://www.youtube.com/",
-            "tiktok_url": "https://www.tiktok.com/",
-            "twitter_url": "https://x.com/",
+            "icon_color": "{{ settings.color_palette.foreground }}",
+            "facebook_url": "https://www.facebook.com/Motoplayground",
+            "instagram_url": "https://www.instagram.com/motoplayground/?hl=en",
+            "youtube_url": "https://www.youtube.com/@motoplaygroundmagazine",
+            "tiktok_url": "https://www.tiktok.com/@motoplayground",
+            "twitter_url": "",
             "threads_url": "",
             "linkedin_url": "",
             "bluesky_url": "",

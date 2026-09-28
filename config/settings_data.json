@@ -10,10 +10,10 @@
 {
   "current": {
     "logo": "shopify://shop_images/grit-logo.png",
-    "logo_inverse": "shopify://shop_images/grit-logo-inverse.png",
+    "logo_inverse": "shopify://shop_images/grit-logo_a0ebe4a8-8175-48e4-930d-fed68de15713.png",
     "logo_height": 36,
     "logo_height_mobile": 28,
-    "favicon": "shopify://shop_images/grit-mark.png",
+    "favicon": "shopify://shop_images/Untitled_design.png",
     "page_text_color": "{{ settings.color_palette.foreground }}",
     "type_body_font": "barlow_condensed_n4",
     "type_subheading_font": "barlow_condensed_n6",
